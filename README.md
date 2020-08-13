@@ -2,7 +2,7 @@
 
 [![Battle Tested ✅](https://img.shields.io/badge/-Battle--Tested%20%E2%9C%85-03666e?style=for-the-badge)](https://github.com/WrathChaos/@freakycoder/react-native-image-swiper)
 
-[![React Native Image Swiper](https://img.shields.io/badge/-React%20Native%20Library%20Boilerplate-lightgrey?style=for-the-badge)](https://github.com/WrathChaos/@freakycoder/react-native-image-swiper)
+[![Fully customizable & extremely easy to use Image Swiper for React Native](https://img.shields.io/badge/-Fully%20customizable%20%26%20extremely%20easy%20to%20use%20Image%20Swiper%20for%20React%20Native-orange?style=for-the-badge)](https://github.com/WrathChaos/@freakycoder/react-native-image-swiper)
 
 [![npm version](https://img.shields.io/npm/v/@freakycoder/react-native-image-swiper.svg?style=for-the-badge)](https://www.npmjs.com/package/@freakycoder/react-native-image-swiper)
 [![npm](https://img.shields.io/npm/dt/@freakycoder/react-native-image-swiper.svg?style=for-the-badge)](https://www.npmjs.com/package/@freakycoder/react-native-image-swiper)
