@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StatusBar, SafeAreaView } from "react-native";
-import ImageSwiper from "./lib/ImageSwiper";
+import ImageSwiper from "@freakycoder/react-native-image-swiper";
 
 const staticImages = [
   {
@@ -33,7 +33,7 @@ const App = () => {
           imageHeight={700}
           images={staticImages}
           onSwipeTop={() => alert("onSwipeTop")}
-          onSwipeBottom={() => alert("onSwipeButtom")}
+          onSwipeBottom={() => alert("onSwipeBottom")}
         />
       </SafeAreaView>
     </View>
