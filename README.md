@@ -12,7 +12,7 @@
 
 <p align="center">
   <img alt="React Native Image Swiper"
-        src="assets/Screenshots/JSLibraryBoilerplate.png" />
+        src="assets/Screenshots/React-Native-Image-Swiper.gif" />
 </p>
 
 # Installation
@@ -79,7 +79,7 @@ import ImageSwiper from "@freakycoder/react-native-image-swiper";
 ## Future Plans
 
 - [x] ~~LICENSE~~
-- [ ] `initialPage` Feature
+- [x] ~~`initialPage` Feature~~
 - [ ] Vertical Image Swiper Feature (Like Tiktok)
 - [ ] Write an article about the lib on Medium
 
