@@ -46,7 +46,15 @@ export default class ImageSwiper extends React.Component<IProps, IState> {
       ImageComponent = Image,
     } = this.props;
     return (
-      <ScrollView horizontal pagingEnabled>
+      <ScrollView
+        horizontal
+        pagingEnabled
+        contentContainerStyle={{
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+        {...this.props}
+      >
         {images &&
           images.map((image: IImage, index: number) => {
             const imageSource = image.asset
@@ -56,7 +64,6 @@ export default class ImageSwiper extends React.Component<IProps, IState> {
               <ScrollView
                 key={index}
                 onScrollEndDrag={(e) => this.handleSwipeGestures(e, image)}
-                {...this.props}
               >
                 <ImageComponent
                   style={_imageStyle(imageHeight, imageWidth)}
