@@ -58,6 +58,7 @@ import { Component1, Component2 } from "react-native-library-boilerplate";
 ## Future Plans
 
 - [x] ~~LICENSE~~
+- [ ] `initialPage` Feature
 - [ ] Vertical Image Swiper Feature (Like Tiktok)
 - [ ] Write an article about the lib on Medium
 

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Image, ScrollView } from "react-native";
+import { Image, ScrollView, Dimensions } from "react-native";
 /**
  * ? Local Imports
  */
@@ -20,12 +20,22 @@ interface IProps {
   imageWidth?: number;
   imageHeight?: number;
   ImageComponent: any;
+  onPageSelected: any;
 }
 
-interface IState {}
+interface IState {
+  currentPage: number;
+}
 
 export default class ImageSwiper extends React.Component<IProps, IState> {
-  handleSwipeGestures = (e, item) => {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentPage: 0,
+    };
+  }
+
+  handleSwipeGestures = (e, item, index) => {
     const { onSwipeBottom, onSwipeTop } = this.props;
     if (e.nativeEvent.contentOffset.y < 0) {
       onSwipeBottom && onSwipeBottom(item);
@@ -38,6 +48,21 @@ export default class ImageSwiper extends React.Component<IProps, IState> {
     uri: image.uri || image.URL || image.url || image.URI,
   });
 
+  handleOnScroll(event) {
+    // ? calculate screenIndex by contentOffset and screen width
+    const newPage = parseInt(
+      event.nativeEvent.contentOffset.x / Dimensions.get("window").width,
+    );
+    if (this.state.currentPage !== newPage) {
+      this.setState(
+        { currentPage: newPage },
+        () =>
+          this.props.onPageSelected &&
+          this.props.onPageSelected(this.state.currentPage),
+      );
+    }
+  }
+
   render() {
     const {
       images,
@@ -49,6 +74,9 @@ export default class ImageSwiper extends React.Component<IProps, IState> {
       <ScrollView
         horizontal
         pagingEnabled
+        alwaysBounceHorizontal
+        onScroll={(e) => this.handleOnScroll(e)}
+        scrollEventThrottle={5}
         contentContainerStyle={{
           alignItems: "center",
           justifyContent: "center",
@@ -63,7 +91,9 @@ export default class ImageSwiper extends React.Component<IProps, IState> {
             return (
               <ScrollView
                 key={index}
-                onScrollEndDrag={(e) => this.handleSwipeGestures(e, image)}
+                onScrollEndDrag={(e) =>
+                  this.handleSwipeGestures(e, image, index)
+                }
               >
                 <ImageComponent
                   style={_imageStyle(imageHeight, imageWidth)}
