@@ -1,8 +1,12 @@
 {
-  "name": "react-native-library-boilerplate",
+  "name": "@freakycoder/react-native-image-swiper",
   "version": "0.1.0",
-  "description": "Description for library",
+  "description": "Fully customizable & extremely easy to use Image Swiper for React Native.",
   "keywords": [
+    "swiper",
+    "image",
+    "image-swiper",
+    "customizable",
     "FreakyCoder",
     "freakycoder",
     "kuray",
@@ -14,18 +18,29 @@
     "rn"
   ],
   "homepage": "https://www.freakycoder.com",
-  "bugs": "https://github.com/WrathChaos/react-native-library-boilerplate/issues",
+  "bugs": "https://github.com/WrathChaos/react-native-image-swiper/issues",
   "main": "./lib/src/index.js",
-  "repository": "git@github.com:WrathChaos/react-native-library-boilerplate.git",
+  "repository": "git@github.com:WrathChaos/react-native-image-swiper.git",
   "author": "Kuray (FreakyCoder) <kurayogun@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "cd lib && tsc && cp ../package.json ../build/dist/ && Echo Build completed!",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
   "devDependencies": {
     "eslint": "^7.6.0",
     "@react-native-community/eslint-config": "^2.0.0",
     "eslint-config-airbnb": "^18.2.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "@types/react": "^16.9.22",
+    "@types/react-native": "^0.63.0",
+    "react-native-typescript-transformer": "^1.2.13",
+    "typescript": "^3.7.4"
   },
   "husky": {
     "hooks": {
