@@ -15,6 +15,8 @@
         src="assets/Screenshots/React-Native-Image-Swiper.gif" />
 </p>
 
+#### Take a look at [RN Image Gallery](https://github.com/Paraboly/react-native-image-gallery) for ready to use Image Swiper
+
 # Installation
 
 Add the dependency:
